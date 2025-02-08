@@ -4,8 +4,7 @@ const express = require('express');
 const { RtcTokenBuilder, RtcRole } = require('agora-token');
 
 const allowedOrigins = [
-  "http://localhost:5173", // Local development
-  "https://mafia-vcg-wazr-3poffbvua-saidkhusayns-projects.vercel.app",
+  "http://localhost:5173",
 ];
 
 const http = require('http');
@@ -62,5 +61,9 @@ app.get('/access_token', nocache, (req, res) => {
         console.error('Error generating token:', error);
         return res.status(500).json({ error: 'Failed to generate token' });
     }
+});
+
+const server = app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
 

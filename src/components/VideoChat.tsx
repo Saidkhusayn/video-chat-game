@@ -151,7 +151,17 @@ const VideoChat = ({ userName }: VideoChatProps) => {
       button.style.backgroundColor = "#EE4B2B";
     }
   };
- 
+  
+  const leaveStream = async () => { //fix here
+    await client.leave()
+    localTracks[0].setMuted(true)
+    
+    setUserActive(false);
+    
+      
+  }
+
+
   if (!UserActive) {
     return <Start />;
   }
@@ -166,8 +176,8 @@ const VideoChat = ({ userName }: VideoChatProps) => {
         <button className="btn btn-danger" onClick={toggleCamera}>
           Camera off
         </button>
-        <button className="btn btn-danger" >
-          Game On
+        <button className="btn btn-danger" onClick={leaveStream}>
+          Leave
         </button>
       </div>
     </div>
