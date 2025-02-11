@@ -37,7 +37,7 @@ app.use(cors({
 }));
 
 app.get('/access_token', nocache, (req, res) => {
-    const channelName = req.query.channel;
+    const channelName = "main";
     const uid = req.query.uid || 0;
     const role = RtcRole.PUBLISHER;
     const expirationTimeInSeconds = 3600;
@@ -72,7 +72,4 @@ const server = app.listen(PORT, () => {
 console.log("APP_ID:", APP_ID);
 console.log("APP_CERTIFICATE:", APP_CERTIFICATE);
 
-app.get("/", (req, res) => {
-  res.send("Server is running!");
-});
 
