@@ -27,7 +27,7 @@ const VideoChat = ({ userName }: VideoChatProps) => {
   const joinAndDisplayLocalStream = async () => {
     try {
     const response = await fetch(
-     `http://localhost:8080/access_token?channel=${CHANNEL}&uid=${0}`
+     `https://video-chat-game-production-2448.up.railway.app/access_token?channel=${CHANNEL}&uid=${0}`
     );
     const data = await response.json();
 
