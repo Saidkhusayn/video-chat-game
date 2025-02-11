@@ -2,11 +2,11 @@
   "name": "mafia-vcg",
   "private": true,
   "version": "0.0.0",
-  "main": "./agora-token-service/tokenGenerator.js",
+  "main": "./backend/tokenGenerator.js",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "start": "node ./agora-token-service/tokenGenerator.js && npm build" ,
+    "start": "vite" ,
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
