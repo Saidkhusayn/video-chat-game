@@ -5,13 +5,15 @@ const { RtcTokenBuilder, RtcRole } = require('agora-token');
 
 const allowedOrigins = [
   "http://localhost:5173",
+  "https://video-chat-game-production-2448.up.railway.app",
+
 ];
 
 const http = require('http');
 
 const APP_ID = process.env.APP_ID;
 const APP_CERTIFICATE = process.env.APP_CERTIFICATE;
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 
 // Initialize Express app
 const app = express();
@@ -65,5 +67,12 @@ app.get('/access_token', nocache, (req, res) => {
 
 const server = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+});
+
+console.log("APP_ID:", APP_ID);
+console.log("APP_CERTIFICATE:", APP_CERTIFICATE);
+
+app.get("/", (req, res) => {
+  res.send("Server is running!");
 });
 
