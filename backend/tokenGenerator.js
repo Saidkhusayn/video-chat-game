@@ -5,7 +5,7 @@ const { RtcTokenBuilder, RtcRole } = require('agora-token');
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://video-chat-game-production-2448.up.railway.app",
+  "https://video-chat-game.vercel.app",
 
 ];
 
